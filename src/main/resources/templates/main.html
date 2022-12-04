@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html
+     lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="table.css">
+    <script type="text/javascript"src="mainCRUD.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<form align="right" action="/report"><input type="submit"  value="Go to report"
+                                            style="background: #01d4f2;border-style: none;color: white; opacity:0.95;"></form>
+<p align="center" style="font-size: 26px; color: #ffffff;"> <b>Papers</b></p>
+<table id="table" align="center" onclick="table_click()">
+    <tr>
+        <th>ID_R</th>
+        <th>ID</th>
+        <th>TYPE</th>
+        <th >SECTIONNAME</th>
+        <th>TITLE</th>
+        <th>SDATE</th>
+    </tr>
+    {{#papers}}
+    <tr >
+        <td align="center"  >   {{ID_R}}</td>
+        <td align="center">{{ID}}</td>
+        <td align="center">{{TYPE}}</td>
+        <td align="center">{{SECTIONNAME}}</td>
+        <td  align="center">{{TITLE}}</td>
+        <td  align="center">{{SDATE}}</td>
+    </tr>
+    {{/papers}}
+</table>
+<input type="button" id="add_but"  value="+" onclick="clickHandler(this)"
+       style="background: #01d4f2;border-style: none;color: white;">
+<input type="checkbox" id="del_box" name="Delete"
+       style="background-color: #f05d63;border-style: none;color: white;"/>
+</body>
+</html>

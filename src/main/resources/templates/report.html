@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="table.css">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>ID_R</th>
+        <th>ID</th>
+        <th>TYPE</th>
+        <th >SECTIONNAME</th>
+        <th>TITLE</th>
+        <th>SDATE</th>
+        <th>ID</th>
+        <th>FNAME</th>
+        <th>ACADEMICDEGREE</th>
+        <th>PLACEOFWORK</th>
+        <th>POSITION</th>
+        <th>CITIZENSHIP</th>
+        <th>SDATE</th>
+    </tr>
+    {{#report}}
+    <tr >
+    {{#paper}}
+        <td align="center"  >   {{ID_R}}</td>
+        <td align="center">{{ID}}</td>
+        <td align="center">{{TYPE}}</td>
+        <td align="center">{{SECTIONNAME}}</td>
+        <td  align="center">{{TITLE}}</td>
+        <td  align="center">{{SDATE}}</td>
+    {{/paper}}
+    {{#participant}}
+        <td align="center">{{ID}}</td>
+        <td align="center">{{FNAME}}</td>
+        <td align="center">{{ACADEMICDEGREE}}</td>
+        <td  align="center">{{PLACEOFWORK}}</td>
+        <td  align="center">{{POSITION}}</td>
+        <td  align="center">{{CITIZENSHIP}}</td>
+        <td  align="center">{{BDATE}}</td>
+    {{/participant}}
+    </tr>
+    {{/report}}
+</table>
+<form action="/download">
+    <input type="submit" value="Download CSV"
+           style="background: #01d4f2;border-style: none;color: white;"/>
+</form>
+</body>
+</html>
